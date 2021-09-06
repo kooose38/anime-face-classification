@@ -12,7 +12,8 @@ import argparse
 from predict import load_model, load_label 
 
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
-net, transform = load_model()
+index2label = load_label()
+net, transform = load_model(index2label)
 
 def predict_fn(img):
     '''モデルの予測を確立で返す'''
