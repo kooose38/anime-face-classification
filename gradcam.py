@@ -78,12 +78,12 @@ def show_ratio(img_path: str, num_samples: int=200, show_idx: int=0):
     fig.savefig(f"results/img{str(id)[:4]}.png")
 
     
-parser.add_argument("arg1", help="image path name", type=str, default="1.jpg")
-parser.add_argument("arg2", help="show ratio or boundary", type=bool, default=True)
+parser.add_argument("--image", help="image path name", type=str, default="1.jpg")
+parser.add_argument("--types", help="show ratio or boundary", type=bool, default=True)
 args = parser.parse_args()
-
-if __name__ = "__main__":
-    if args.arg2:
-        show_boundary(args.arg1)
-    else:
-        show_ratio(args.arg2)
+image = str(args.image)
+type = args.types 
+if type:
+    show_boundary(image)
+else:
+    show_ratio(image)
