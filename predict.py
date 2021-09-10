@@ -88,9 +88,8 @@ def main(img_path: str):
         results[str(i+1)] = result
     return results  
 
-parser.add_argument("arg1", help="image path name", type=str, default="1.jpg")
+parser.add_argument("--image", help="image path name", type=str, default="1.jpg")
 args = parser.parse_args()
-
-if __name__ = "__main__":
-    root_path = "img/"
-    main(root_path+args.arg1)
+image = str(args.image)
+img_p = os.path.join("img", image)
+main(img_p)
